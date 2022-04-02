@@ -184,7 +184,11 @@ Additionally, the Dockerfile runs the script: [common-debian.sh](./.devcontainer
 
 ***
 
+*Table of Contents auto-generated thanks to [DocToc](https://github.com/thlorenz/doctoc)*  
+*[CHANGELOG.md](CHANGELOG.md) auto-generated thanks to [git-cliff](https://github.com/orhun/git-cliff)* 
+
+
+***
+
 Jimmy Briggs | 2022
 
-*Table of Contents auto-generated thanks to [DocToc](https://github.com/thlorenz/doctoc)*
-*[CHANGELOG.md](CHANGELOG.md) auto-generated thanks to [git-cliff](https://github.com/orhun/git-cliff)* 

@@ -6,8 +6,6 @@ This project serves the purpose of creating and maintaining an optimal developme
 
 View this project's progression over time through its auto-generated [Changelog](CHANGELOG.md).
 
-## Contents
-
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -16,10 +14,10 @@ View this project's progression over time through its auto-generated [Changelog]
 - [R Development Container](#r-development-container)
   - [Features](#features)
   - [Development Container Images](#development-container-images)
-    - [Dockerfile](#dockerfile)
+  	- [Dockerfile](#dockerfile)
   - [Settings](#settings)
   - [Extensions](#extensions)
-    - [Installations](#installations)
+  	- [Installations](#installations)
   - [Notes](#notes)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -39,7 +37,7 @@ These may be utilized locally by including the image as the base image in your o
 
 Container Image Versions:
 
-- [rdevcontainer:latest](https://github.com/jimbrig/rdevcontainer/pkgs/container/rdevcontainer/18163217?tag=v1.1.0) - latest development container image
+- [rdevcontainer:latest](https://github.com/jimbrig/rdevcontainer/pkgs/container/rdevcontainer/18163217?tag=latest) - latest development container image
 - [rdevcontainer:v1.1.0](https://github.com/jimbrig/rdevcontainer/pkgs/container/rdevcontainer/18163217?tag=v1.1.0) - version 1.1.0 with additional packages and configurations added to the base image.
 - [rdevcontainer:v1.0.0](https://github.com/jimbrig/rdevcontainer/pkgs/container/rdevcontainer/18163185?tag=v1.0.0) - initial version of the container image primarily based off the R Community development container image.
 
@@ -186,7 +184,11 @@ Additionally, the Dockerfile runs the script: [common-debian.sh](./.devcontainer
 
 ***
 
+*Table of Contents auto-generated thanks to [DocToc](https://github.com/thlorenz/doctoc)*  
+*[CHANGELOG.md](CHANGELOG.md) auto-generated thanks to [git-cliff](https://github.com/orhun/git-cliff)* 
+
+
+***
+
 Jimmy Briggs | 2022
 
-*Table of Contents auto-generated thanks to [DocToc](https://github.com/thlorenz/doctoc)*
-*[CHANGELOG.md](CHANGELOG.md) auto-generated thanks to [git-cliff](https://github.com/orhun/git-cliff)* 

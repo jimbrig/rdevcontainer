@@ -164,6 +164,8 @@ Additionally, the Dockerfile runs the script: [common-debian.sh](./.devcontainer
 
 ## Notes
 
+- Utilize VSCode's [devcontainer-cli](https://code.visualstudio.com/docs/remote/devcontainer-cli) to manage devcontainer environments and images from the command line locally. This CLI tool can be installed directly fro the [Remote Containers Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers).
+
 ***
 
 Jimmy Briggs | 2022

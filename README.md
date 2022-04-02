@@ -2,34 +2,35 @@
 
 Template repository for creating and developing within an optimal container based R environment using Visual Studio Code's devcontainers and various R features for interacting with VSCode.
 
+Currently the development environment runs with R version 4.1 and uses zsh as its default shell; radian is used as the default R terminal.
+
 ## Settings
 
 From [devcontainer.json](.devcontainer/devcontainer.json): 
 
 ```json
-	// Set *default* container specific settings.json values on container create.
-	"settings": {
-		"r.rterm.linux": "/usr/local/bin/radian",
-		"r.bracketedPaste": true,
-		"r.plot.useHttpgd": true,
-		"[r]": {
-			"editor.defaultFormatter": "Ikuyadeu.r",
-			"editor.formatOnSave": true,
-			"editor.wordSeparators": "`~!@#%$^&*()-=+[{]}\\|;:'\",<>/?"
-		},
-		"[rmd]": {
-			"editor.defaultFormatter": "Ikuyadeu.r",
-			"editor.formatOnSave": true
-		},
-		"C_Cpp.commentContinuationPatterns": [
-			"/**",
-			"//'"
-		],
-		"path-autocomplete.pathMappings": {
-			"/": "/",
-			"./": "${folder}"
-		}
+"settings": {
+	"r.rterm.linux": "/usr/local/bin/radian",
+	"r.bracketedPaste": true,
+	"r.plot.useHttpgd": true,
+	"[r]": {
+		"editor.defaultFormatter": "Ikuyadeu.r",
+		"editor.formatOnSave": true,
+		"editor.wordSeparators": "`~!@#%$^&*()-=+[{]}\\|;:'\",<>/?"
 	},
+	"[rmd]": {
+		"editor.defaultFormatter": "Ikuyadeu.r",
+		"editor.formatOnSave": true
+	},
+	"C_Cpp.commentContinuationPatterns": [
+		"/**",
+		"//'"
+	],
+	"path-autocomplete.pathMappings": {
+		"/": "/",
+		"./": "${folder}"
+	}
+},
 ```
 
 ## Extensions
@@ -53,18 +54,17 @@ From [devcontainer.json](.devcontainer/devcontainer.json):
 From [devcontainer.json](.devcontainer/devcontainer.json):
 
 ```json
-// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [
-		"ikuyadeu.r",
-		"rdebugger.r-debugger",
-		"christian-kohler.path-intellisense",
-		"ionutvmi.path-autocomplete",
-		"esbenp.prettier-vscode",
-		"Mohamed-El-Fodil-Ihaddaden.shinysnip",
-		"ms-vscode.cpptools",
-		"usernamehw.errorlens",
-		"ms-vscode.live-server"
-	],
+"extensions": [
+	"ikuyadeu.r",
+	"rdebugger.r-debugger",
+	"christian-kohler.path-intellisense",
+	"ionutvmi.path-autocomplete",
+	"esbenp.prettier-vscode",
+	"Mohamed-El-Fodil-Ihaddaden.shinysnip",
+	"ms-vscode.cpptools",
+	"usernamehw.errorlens",
+	"ms-vscode.live-server"
+],
 ```
 
 ### Installations

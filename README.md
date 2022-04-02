@@ -6,8 +6,6 @@ This project serves the purpose of creating and maintaining an optimal developme
 
 View this project's progression over time through its auto-generated [Changelog](CHANGELOG.md).
 
-## Contents
-
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -16,10 +14,10 @@ View this project's progression over time through its auto-generated [Changelog]
 - [R Development Container](#r-development-container)
   - [Features](#features)
   - [Development Container Images](#development-container-images)
-    - [Dockerfile](#dockerfile)
+  	- [Dockerfile](#dockerfile)
   - [Settings](#settings)
   - [Extensions](#extensions)
-    - [Installations](#installations)
+  	- [Installations](#installations)
   - [Notes](#notes)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->

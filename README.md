@@ -1,10 +1,28 @@
 # R Development Container
 
-> Repository that houses my R development environment with Visual Studio Code's devcontainer feature.
+> Repository housing my customized R development environment using Visual Studio Code's Development Containers feature.
 
 This project serves the purpose of creating and maintaining an optimal development environment for R within a container based R environment using Visual Studio Code's devcontainers and various R features for interacting with VSCode.
 
 View this project's progression over time through its auto-generated [Changelog](CHANGELOG.md).
+
+## Contents
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [R Development Container](#r-development-container)
+  - [Features](#features)
+  - [Development Container Images](#development-container-images)
+    - [Dockerfile](#dockerfile)
+  - [Settings](#settings)
+  - [Extensions](#extensions)
+    - [Installations](#installations)
+  - [Notes](#notes)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Features
 
@@ -169,3 +187,6 @@ Additionally, the Dockerfile runs the script: [common-debian.sh](./.devcontainer
 ***
 
 Jimmy Briggs | 2022
+
+*Table of Contents auto-generated thanks to [DocToc](https://github.com/thlorenz/doctoc)*
+*[CHANGELOG.md](CHANGELOG.md) auto-generated thanks to [git-cliff](https://github.com/orhun/git-cliff)* 

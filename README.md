@@ -37,7 +37,7 @@ These may be utilized locally by including the image as the base image in your o
 
 Container Image Versions:
 
-- [rdevcontainer:latest](https://github.com/jimbrig/rdevcontainer/pkgs/container/rdevcontainer/18163217?tag=v1.1.0) - latest development container image
+- [rdevcontainer:latest](https://github.com/jimbrig/rdevcontainer/pkgs/container/rdevcontainer/18163217?tag=latest) - latest development container image
 - [rdevcontainer:v1.1.0](https://github.com/jimbrig/rdevcontainer/pkgs/container/rdevcontainer/18163217?tag=v1.1.0) - version 1.1.0 with additional packages and configurations added to the base image.
 - [rdevcontainer:v1.0.0](https://github.com/jimbrig/rdevcontainer/pkgs/container/rdevcontainer/18163185?tag=v1.0.0) - initial version of the container image primarily based off the R Community development container image.
 

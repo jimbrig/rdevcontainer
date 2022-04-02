@@ -1,0 +1,142 @@
+# R Development Container
+
+Template repository for creating and developing within an optimal container based R environment using Visual Studio Code's devcontainers and various R features for interacting with VSCode.
+
+## Settings
+
+From [devcontainer.json](.devcontainer/devcontainer.json): 
+
+```json
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"r.rterm.linux": "/usr/local/bin/radian",
+		"r.bracketedPaste": true,
+		"r.plot.useHttpgd": true,
+		"[r]": {
+			"editor.defaultFormatter": "Ikuyadeu.r",
+			"editor.formatOnSave": true,
+			"editor.wordSeparators": "`~!@#%$^&*()-=+[{]}\\|;:'\",<>/?"
+		},
+		"[rmd]": {
+			"editor.defaultFormatter": "Ikuyadeu.r",
+			"editor.formatOnSave": true
+		},
+		"C_Cpp.commentContinuationPatterns": [
+			"/**",
+			"//'"
+		],
+		"path-autocomplete.pathMappings": {
+			"/": "/",
+			"./": "${folder}"
+		}
+	},
+```
+
+## Extensions
+
+- [R Extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=Ikuyadeu.r)
+
+- [R Debugger for VS Code](https://marketplace.visualstudio.com/items?itemName=RDebugger.r-debugger)
+
+- [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) and [Path AutoComplete](https://marketplace.visualstudio.com/items?itemName=ionutvmi.path-autocomplete)
+
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
+- [shinysnip - Simple Shiny Code Snippets generator](https://marketplace.visualstudio.com/items?itemName=Mohamed-El-Fodil-Ihaddaden.shinysnip)
+
+- [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+
+- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+
+- [Live Preview (New!)](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
+
+From [devcontainer.json](.devcontainer/devcontainer.json):
+
+```json
+// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"ikuyadeu.r",
+		"rdebugger.r-debugger",
+		"christian-kohler.path-intellisense",
+		"ionutvmi.path-autocomplete",
+		"esbenp.prettier-vscode",
+		"Mohamed-El-Fodil-Ihaddaden.shinysnip",
+		"ms-vscode.cpptools",
+		"usernamehw.errorlens",
+		"ms-vscode.live-server"
+	],
+```
+
+### Installations
+
+Initially only the following R Packages are installed with the devcontainer:
+
+- devtools
+- languageserver
+- httpgd
+- rstudioapi
+- tidyverse
+
+Additionally, the Dockerfile runs the script: [common-debian.sh](./.devcontainer/library-scripts/common-debian.sh) to install system packages and other dependencies.
+
+## Dockerfile
+
+<details><summary>View Dockerfile</summary><p>
+
+```Dockerfile
+# R version:
+ARG VARIANT="4.1"
+FROM rocker/r-ver:${VARIANT}
+
+# Use the [Option] comment to specify true/false arguments that should appear in VS Code UX
+
+# [Option] Install zsh
+ARG INSTALL_ZSH="true"
+
+# [Option] Upgrade OS packages to their latest versions
+ARG UPGRADE_PACKAGES="true"
+
+# Install needed packages and setup non-root user. Use a separate RUN statement to add your own dependencies.
+ARG USERNAME=vscode
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
+COPY library-scripts/*.sh /tmp/library-scripts/
+COPY .Rprofile ${HOME}/.Rprofile
+
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && /bin/bash /tmp/library-scripts/common-debian.sh "${INSTALL_ZSH}" "${USERNAME}" "${USER_UID}" "${USER_GID}" "${UPGRADE_PACKAGES}" "true" "true" \
+    && usermod -a -G staff ${USERNAME} \
+    && apt-get -y install \
+        python3-pip \
+        libgit2-dev \
+        libcurl4-openssl-dev \
+        libssl-dev \
+        libxml2-dev \
+        libxt-dev \
+    && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts \
+    && python3 -m pip --no-cache-dir install radian \
+    && install2.r --error --skipinstalled --ncpus -1 \
+        devtools \
+        languageserver \
+        httpgd \
+        rstudioapi \
+        tidyverse \
+    && rm -rf /tmp/downloaded_packages
+
+# VSCode R Debugger dependency. Install the latest release version from GitHub without using GitHub API.
+# See https://github.com/microsoft/vscode-dev-containers/issues/1032
+RUN export TAG=$(git ls-remote --tags --refs --sort='version:refname' https://github.com/ManuelHentschel/vscDebugger v\* | tail -n 1 | cut --delimiter='/' --fields=3) \
+    && Rscript -e "remotes::install_git('https://github.com/ManuelHentschel/vscDebugger.git', ref = '"${TAG}"', dependencies = FALSE)"
+
+# R Session watcher settings.
+# See more details: https://github.com/REditorSupport/vscode-R/wiki/R-Session-watcher
+RUN echo 'source(file.path(Sys.getenv("HOME"), ".vscode-R", "init.R"))' >> ${R_HOME}/etc/Rprofile.site
+
+# [Optional] Uncomment this section to install additional OS packages.
+# RUN apt-get update \
+#     && export DEBIAN_FRONTEND=noninteractive \
+#     && apt-get -y install --no-install-recommends <your-package-list-here>
+```
+
+</p></details>

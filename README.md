@@ -14,7 +14,10 @@ Currently the development environment runs with R version 4.1 and uses zsh as it
 
 The latest container images can be found in [this repository's package containers](https://github.com/jimbrig/rdevcontainer/pkgs/container/rdevcontainer).
 
-These may be utilized locally by pulling via `docker pull ghcr.io/jimbrig/rdevcontainer:latest` and including the image as the base image in your own [devcontainer.json](.devcontainer/devcontainer.json) configuration file.
+These may be utilized locally by including the image as the base image in your own [devcontainer.json](.devcontainer/devcontainer.json) configuration file. 
+
+- Pull image from the command line: `docker pull ghcr.io/jimbrig/rdevcontainer:latest`
+- Use as base image in Dockerfile: `FROM ghcr.io/jimbrig/rdevcontainer:latest`
 
 Container Image Versions:
 

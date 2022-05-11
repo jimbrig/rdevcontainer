@@ -25,10 +25,6 @@
 			"editor.defaultFormatter": "Ikuyadeu.r",
 			"editor.formatOnSave": true
 		},
-		"C_Cpp.commentContinuationPatterns": [
-			"/**",
-			"//'"
-		],
 		"path-autocomplete.pathMappings": {
 			"/": "/",
 			"./": "${folder}"
@@ -42,8 +38,6 @@
 		"christian-kohler.path-intellisense",
 		"ionutvmi.path-autocomplete",
 		"esbenp.prettier-vscode",
-		"Mohamed-El-Fodil-Ihaddaden.shinysnip",
-		"ms-vscode.cpptools",
 		"usernamehw.errorlens",
 		"ms-vscode.live-server"
 	],

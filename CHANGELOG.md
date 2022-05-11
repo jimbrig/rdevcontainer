@@ -26,6 +26,7 @@ All notable changes to this project will be documented in this file.
 - Add c/c++ configs for Rcpp
 - Add common debian lib install script
 - Create cliff.yml gha for git-cliff
+- Remove c++ features
 
 ### Miscellaneous Tasks
 
@@ -38,6 +39,7 @@ All notable changes to this project will be documented in this file.
 - Autopublish 2022-04-02T01:12:51Z
 - Autopublish 2022-04-02T01:14:25Z
 - Autopublish 2022-04-02T01:15:31Z
+- Autopublish 2022-04-02T01:17:57Z
 
 ### Bug
 
